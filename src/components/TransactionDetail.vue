@@ -70,7 +70,7 @@ export default {
   methods: {
     loadDetailTransaksi() {
       this.isLoading = true;
-      fetch(`http://localhost/fetano/pages/transactions/get.php?id_transaksi=${this.id_transaksi}&id_user=${this.id_user}`, {
+      fetch(`https://vifawatch.000webhostapp.com/pages/transactions/get.php?id_transaksi=${this.id_transaksi}&id_user=${this.id_user}`, {
         method: 'GET',
       })
       .then(response => {

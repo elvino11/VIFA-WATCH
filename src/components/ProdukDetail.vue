@@ -215,7 +215,7 @@ export default {
     },
     ProductDetail() {
       this.isLoading = true;
-      fetch(`http://localhost/fetano/pages/products/get.php?kode_barang=${this.kode_barang}`, {
+      fetch(`https://vifawatch.000webhostapp.com/pages/products/get.php?kode_barang=${this.kode_barang}`, {
         method: 'GET',
       })
         .then(response => {
@@ -236,7 +236,7 @@ export default {
     },
     loadProduct() {
       this.isLoading = true;
-      fetch(`http://localhost/fetano/pages/brands/index.php`, {
+      fetch(`https://vifawatch.000webhostapp.com/pages/brands/index.php`, {
         method: 'GET',
       })
         .then(response => {
@@ -259,7 +259,7 @@ export default {
         const removeProduct = new URLSearchParams({
           'kode_barang': this.kode_barang
         });
-        fetch(`http://localhost/fetano/pages/products/delete.php`, {
+        fetch(`https://vifawatch.000webhostapp.com/pages/products/delete.php`, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -295,7 +295,7 @@ export default {
           deskripsi: this.formEdit.deskripsi,
           gambar: this.formEdit.gambar
         });
-        fetch(`http://localhost/fetano/pages/products/update.php`, {
+        fetch(`https://vifawatch.000webhostapp.com/pages/products/update.php`, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',

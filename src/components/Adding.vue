@@ -213,7 +213,7 @@ export default {
 
         });
 
-        fetch(`http://localhost/fetano/pages/products/create.php`, {
+        fetch(`https://vifawatch.000webhostapp.com/pages/brands/create.php`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -248,7 +248,7 @@ export default {
     },
     loadProduct() {
       this.isLoading = true;
-      fetch(`http://localhost/fetano/pages/brands/index.php`, {
+      fetch(`https://vifawatch.000webhostapp.com/pages/brands/index.php`, {
         method: 'GET',
       })
         .then(response => {
@@ -266,6 +266,41 @@ export default {
           this.isLoading = false;
         })
     },
+    addBrand() {
+      if (confirm("are you sure want to add brand ?")) {
+        const formBrand = new URLSearchParams( {
+          nama_brand: this.brandAdd.nama_brand,
+          gambar_brand: this.brandAdd.gambar_brand
+        })
+        fetch(`https://vifawatch.000webhostapp.com/pages/brands/create.php`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'API-Key': 'secret'
+          },
+          body: formBrand.toString(),
+        })
+          .then(response => {
+            return response.json();
+          })
+          .then(json => {
+            if (!json.status) {
+              alert(json.error);
+            } else {
+              this.data.push(json.data);
+              console.log(this.data);
+            }
+          })
+          .catch((e) => {
+            alert('Terjadi error ' + e.toString() )
+          })
+          .finally(() => {
+            this.brandAdd.nama_brand = '';
+            this.brandAdd.gambar_brand = '';
+            this.model = false;
+          })
+      }
+    }
   },
   mounted() {
     this.loadProduct();

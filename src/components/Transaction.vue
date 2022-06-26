@@ -86,7 +86,7 @@ export default {
   },
   methods: {
     loadTransaksi() {
-      fetch(`http://localhost/fetano/pages/transactions/index4.php?id_user=${this.id_user}`, {
+      fetch(`https://vifawatch.000webhostapp.com/pages/transactions/index4.php?id_user=${this.id_user}`, {
         method: 'GET'
       })
       .then(response => {

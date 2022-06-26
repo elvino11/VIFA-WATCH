@@ -85,7 +85,7 @@ export default {
   methods: {
     load() {
       this.isLoading = true;
-      fetch(`http://localhost/fetano/pages/users/get.php?id_user=${this.id_user}`, {
+      fetch(`https://vifawatch.000webhostapp.com/pages/users/get.php?id_user=${this.id_user}`, {
         method: 'GET',
       })
         .then(response => {

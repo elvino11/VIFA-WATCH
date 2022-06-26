@@ -108,7 +108,7 @@ export default {
   methods: {
     ProductView() {
       this.isLoading = true;
-      fetch(`http://localhost/fetano/pages/products/index.php`, {
+      fetch(`https://vifawatch.000webhostapp.com/pages/products/index.php`, {
         method: 'GET'
       })
       .then(response => {
@@ -139,7 +139,7 @@ export default {
     },
     NoProductView() {
       this.isLoading = true;
-      fetch(`http://localhost/fetano/pages/products/index2.php`, {
+      fetch(`https://vifawatch.000webhostapp.com/pages/products/index2.php`, {
         method: 'GET'
       })
         .then(response => {

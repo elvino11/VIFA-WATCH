@@ -174,7 +174,7 @@ export default {
     },
     load() {
       this.isLoading = true;
-      fetch(`http://localhost/fetano/pages/brands/index.php`, {
+      fetch(`https://vifawatch.000webhostapp.com/pages/brands/index.php`, {
         method: 'GET',
       })
       .then(response => {
@@ -199,7 +199,7 @@ export default {
           nama_brand: this.brandAdd.nama_brand,
           gambar_brand: this.brandAdd.gambar_brand
         })
-        fetch(`http://localhost/fetano/pages/brands/create.php`, {
+        fetch(`https://vifawatch.000webhostapp.com/pages/brands/create.php`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -235,7 +235,7 @@ export default {
           nama_brand: this.brandUpdate.nama_brand,
           gambar_brand: this.brandUpdate.gambar_brand
         });
-        fetch(`http://localhost/fetano/pages/brands/update.php`, {
+        fetch(`https://vifawatch.000webhostapp.com/pages/brands/update.php`, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -271,7 +271,7 @@ export default {
         const brandRemove = new URLSearchParams( {
           id : this.brandDelete.id
         });
-        fetch(`http://localhost/fetano/pages/brands/delete.php`, {
+        fetch(`https://vifawatch.000webhostapp.com/pages/brands/delete.php`, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',

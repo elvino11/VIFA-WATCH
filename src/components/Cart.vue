@@ -154,7 +154,7 @@ export default {
   methods: {
     loadKeranjang() {
       this.isLoading = true;
-      fetch(`http://localhost/fetano/pages/keranjang/index.php?id_user=${this.id_user}&id_transaksi=${this.id_transaksi}`, {
+      fetch(`https://vifawatch.000webhostapp.com/pages/keranjang/index.php?id_user=${this.id_user}&id_transaksi=${this.id_transaksi}`, {
         method: 'GET'
       })
       .then(response => {
@@ -190,7 +190,7 @@ export default {
           pembayaran: this.addTransaksi.pembayaran,
           id_user: this.addTransaksi.id_user
         })
-        fetch(`http://localhost/fetano/pages/transactions/create.php`, {
+        fetch(`https://vifawatch.000webhostapp.com/pages/transactions/create.php`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
